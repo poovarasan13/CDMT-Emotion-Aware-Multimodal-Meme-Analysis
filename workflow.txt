@@ -1,0 +1,136 @@
+================================================================================
+CDMT MEME ANALYSIS SYSTEM - WORKFLOW AND USER GUIDE
+================================================================================
+
+1. PREREQUISITES & SETUP
+--------------------------------------------------------------------------------
+Before running the system, ensure you have Python 3.10+ installed.
+
+1.  Open your terminal or command prompt.
+2.  Navigate to the project directory:
+    cd "d:\Final Year Project Phase II\Code\project"
+3.  Install the required libraries:
+    pip install -r requirements.txt
+
+   *Note: This usually takes 2-5 minutes depending on your internet speed.*
+
+2. HOW TO RUN THE DEMO
+--------------------------------------------------------------------------------
+1.  Run the Streamlit application:
+    streamlit run main.py
+    or
+    python -m streamlit run main.py
+
+2.  A new tab will open in your default web browser (usually http://localhost:8501).
+3.  Wait for the "Initializing models..." spinner to complete. The first time you run this,
+    it needs to download the CLIP (Image) and MiniLM (Text) models from HuggingFace.
+    This can take a few minutes (approx 500MB - 1GB download).
+
+3. HOW TO GIVE SAMPLE INPUT
+--------------------------------------------------------------------------------
+1.  **Find a Meme:**
+    - Go to Google Images or Reddit (e.g., r/ProgrammerHumor).
+    - Search for a meme (e.g., "coding meme", "cat meme").
+    - Save the image as a .jpg or .png file to your computer.
+
+2.  **Upload to App:**
+    - In the Streamlit web interface, click the "Browse files" button.
+    - Select your saved meme image.
+    - The image will appear on the screen.
+
+3.  **Analyze:**
+    - Click the "Analyze Meme" button.
+    - The system will:
+      a) Extract text from the image.
+      b) Predict the emotion (Humor, Sarcasm, etc.).
+      c) Show the Cognitive Dissonance Score.
+
+4. HOW TO TRAIN THE MODEL (RESEARCH PHASE)
+--------------------------------------------------------------------------------
+*IMPORTANT NOTE:*
+The current demo uses *untrained* projection layers on top of powerful *pretrained* 
+encoders. This means the features (inputs) are high-quality, but the final prediction 
+might be random until you train it on a real dataset.
+
+To train this for your research paper results, follow these steps:
+
+Step A: Prepare Dataset
+   - Download the **Memotion 7k** dataset (common for meme analysis).
+   - Format it into a CSV file with columns: `image_path`, `text`, `label`.
+
+Step B: Create a Training Script (`train.py`)
+   You need to write a script that does the following:
+
+   1. **Load Data:** Read the CSV and load images.
+   2. **Initialize Model:** 
+      - Instantiate `ImageEncoder`, `TextEncoder`, `MultimodalFusion`, `EmotionClassifier`.
+   3. **Define Loss Function:** 
+      - Use `CrossEntropyLoss` for emotion classification.
+      - Add a custom `ContrastiveLoss` for the Cognitive Dissonance regularization.
+   4. **Training Loop:**
+      ```python
+      optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
+      
+      for image, text, label in dataloader:
+          # Forward pass
+          img_emb = image_encoder(image)
+          txt_emb = text_encoder(text)
+          fused = fusion_module(img_emb, txt_emb)
+          prediction = emotion_classifier(fused)
+          
+          # Calculate Loss
+          loss = criterion(prediction, label)
+          
+          # Backward pass
+          optimizer.zero_grad()
+          loss.backward()
+          optimizer.step()
+      ```
+   5. **Save Weights:**
+      - Save the trained model state dict: `torch.save(model.state_dict(), 'cdmt_model.pth')`
+
+Step C: Load Trained Weights in Demo
+   - Update `main.py` to load your `cdmt_model.pth` file instead of initializing random weights.
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+- **"EasyOCR not detected":** ensure you installed requirements. The system will fall back 
+  to mock text if OCR fails.
+- **"CUDA out of memory":** Open `main.py` and remove `.to(device)` calls or 
+  force `device='cpu'`. (The current demo works on CPU by default).
+
+5. HOW TO TRAIN (Implemented)
+--------------------------------------------------------------------------------
+1.  **Preprocess the Dataset**:
+    The dataset is located in `dataset/`. The script `preprocess_data.py` will read `combined_data.csv`, 
+    map label names (e.g. "twisted_meaning" -> "sarcasm"), and verify images exist.
+    
+    Run:
+    `python preprocess_data.py`
+    
+    This creates `dataset/train_data.csv`.
+
+2.  **Run Training**:
+    Use `train.py` to train the model. 
+    You can limit the number of samples to test the pipeline before full training (as requested).
+    
+    Example (Train on 50 samples):
+    `python train.py --max_samples 50 --epochs 5`
+    
+    Example (Full Training):
+    `python train.py --epochs 10 --batch_size 16`
+    
+    The trained model will be saved as `cdmt_trained.pth`.
+
+3.  **Test the Trained Model**:
+    Once `cdmt_trained.pth` exists in the project folder, simply restart the Streamlit app:
+    
+    streamlit run main.py
+    or 
+    python -m streamlit run main.py
+
+    
+    The app will automatically detect and load the trained weights. You will see a "Loading trained weights..." 
+    success message in the sidebar. Upload any meme to test the model's new predictions.
+

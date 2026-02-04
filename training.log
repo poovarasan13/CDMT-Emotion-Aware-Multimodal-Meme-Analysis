@@ -1,0 +1,42 @@
+2026-02-05 00:04:17,769 [INFO] Training on cpu...
+2026-02-05 00:04:17,818 [INFO] Limiting dataset to 12 samples.
+2026-02-05 00:04:23,200 [INFO] Starting Training Loop...
+2026-02-05 00:04:25,961 [INFO] Epoch 1 Summary:
+2026-02-05 00:04:25,961 [INFO]   Loss: 1.6227
+2026-02-05 00:04:25,962 [INFO]   Accuracy: 0.0833
+2026-02-05 00:04:25,962 [INFO]   F1 Score (Weighted): 0.1429
+2026-02-05 00:04:25,962 [INFO] ------------------------------
+2026-02-05 00:04:26,036 [INFO] Saved checkpoint to checkpoints\checkpoint_latest.pth and checkpoints\checkpoint_epoch_1.pth
+2026-02-05 00:04:27,992 [INFO] Epoch 2 Summary:
+2026-02-05 00:04:27,992 [INFO]   Loss: 1.5636
+2026-02-05 00:04:27,992 [INFO]   Accuracy: 0.6667
+2026-02-05 00:04:27,994 [INFO]   F1 Score (Weighted): 0.5417
+2026-02-05 00:04:27,994 [INFO] ------------------------------
+2026-02-05 00:04:28,061 [INFO] Saved checkpoint to checkpoints\checkpoint_latest.pth and checkpoints\checkpoint_epoch_2.pth
+2026-02-05 00:04:30,086 [INFO] Epoch 3 Summary:
+2026-02-05 00:04:30,087 [INFO]   Loss: 1.5133
+2026-02-05 00:04:30,087 [INFO]   Accuracy: 0.7500
+2026-02-05 00:04:30,087 [INFO]   F1 Score (Weighted): 0.6778
+2026-02-05 00:04:30,087 [INFO] ------------------------------
+2026-02-05 00:04:30,156 [INFO] Saved checkpoint to checkpoints\checkpoint_latest.pth and checkpoints\checkpoint_epoch_3.pth
+2026-02-05 00:04:31,991 [INFO] Epoch 4 Summary:
+2026-02-05 00:04:31,991 [INFO]   Loss: 1.4813
+2026-02-05 00:04:31,991 [INFO]   Accuracy: 0.6667
+2026-02-05 00:04:31,991 [INFO]   F1 Score (Weighted): 0.5417
+2026-02-05 00:04:31,992 [INFO] ------------------------------
+2026-02-05 00:04:32,059 [INFO] Saved checkpoint to checkpoints\checkpoint_latest.pth and checkpoints\checkpoint_epoch_4.pth
+2026-02-05 00:04:34,006 [INFO] Epoch 5 Summary:
+2026-02-05 00:04:34,007 [INFO]   Loss: 1.4186
+2026-02-05 00:04:34,007 [INFO]   Accuracy: 0.7500
+2026-02-05 00:04:34,008 [INFO]   F1 Score (Weighted): 0.6778
+2026-02-05 00:04:34,008 [INFO] ------------------------------
+2026-02-05 00:04:34,077 [INFO] Saved checkpoint to checkpoints\checkpoint_latest.pth and checkpoints\checkpoint_epoch_5.pth
+2026-02-05 00:04:34,078 [INFO] ==============================
+2026-02-05 00:04:34,078 [INFO] Training Completed!
+2026-02-05 00:04:34,078 [INFO] Final Model Metrics (Epoch 5):
+2026-02-05 00:04:34,078 [INFO]   Loss: 1.4186
+2026-02-05 00:04:34,079 [INFO]   Accuracy: 0.7500
+2026-02-05 00:04:34,079 [INFO]   F1 Score: 0.6778
+2026-02-05 00:04:34,079 [INFO] ==============================
+2026-02-05 00:04:34,080 [INFO] Saving final model...
+2026-02-05 00:04:34,092 [INFO] Model saved to checkpoints\cdmt_trained.pth
