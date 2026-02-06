@@ -246,7 +246,7 @@ def train(args):
 
     # Final Model Save
     logging.info("Saving final model...")
-    save_path = os.path.join(args.checkpoint_dir, "cdmt_trained.pth")
+    save_path = os.path.join(args.checkpoint_dir, "cdmt_trained_v1.pth")
     torch.save({
         'fusion': fusion.state_dict(),
         'classifier': classifier.state_dict()

@@ -55,10 +55,10 @@ def load_models():
     cd_metric = CognitiveDissonance(embedding_dim=512)
     
     # LOAD TRAINED WEIGHTS IF AVAILABLE
-    weights_path = "cdmt_trained.pth"
+    weights_path = "cdmt_trained_v1.pth"
     if not os.path.exists(weights_path):
         # Check checkpoints folder
-        weights_path = os.path.join("checkpoints", "cdmt_trained.pth")
+        weights_path = os.path.join("checkpoints", "cdmt_trained_v1.pth")
     
     if os.path.exists(weights_path):
         st.sidebar.success(f"Loading trained weights from {weights_path}")

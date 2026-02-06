@@ -119,7 +119,11 @@ TROUBLESHOOTING
     `python train.py --max_samples 50 --epochs 5`
     
     Example (Full Training):
-    `python train.py --epochs 10 --batch_size 16`
+    `python train.py --epochs 40 --batch_size 16`
+
+
+
+    python3 train.py --epochs 20 --batch_size 32
     
     The trained model will be saved as `cdmt_trained.pth`.
 
