@@ -272,4 +272,4 @@
 2026-02-06 09:01:34,377 [INFO]   F1 Score: 0.7802
 2026-02-06 09:01:34,377 [INFO] ==============================
 2026-02-06 09:01:34,377 [INFO] Saving final model...
-2026-02-06 09:01:34,391 [INFO] Model saved to checkpoints/cdmt_trained.pth
+2026-02-06 09:01:34,391 [INFO] Model saved to checkpoints/cdmt_trained_v1.pth
