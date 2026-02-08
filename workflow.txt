@@ -116,6 +116,8 @@ TROUBLESHOOTING
     You can limit the number of samples to test the pipeline before full training (as requested).
     
     Example (Train on 50 samples):
+    python train.py --epochs 1 --batch_size 16
+
     `python train.py --max_samples 50 --epochs 5`
     
     Example (Full Training):

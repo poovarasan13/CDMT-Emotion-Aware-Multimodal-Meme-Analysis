@@ -1,0 +1,28 @@
+# Large files
+archive.zip
+*.zip
+*.7z
+*.tar
+*.gz
+
+# Training artifacts
+checkpoints/
+*.pth
+*.log
+
+# Dataset (if intended to be excluded)
+archive/
+dataset/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# Model metadata
+.model_metadata.cache

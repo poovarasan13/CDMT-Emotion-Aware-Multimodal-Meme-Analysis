@@ -19,7 +19,7 @@ from dissonance import CognitiveDissonance
 # torch.serialization.add_safe_globals(...)
 
 # Configure Logging
-def setup_logging(log_file="training.log", resume=False):
+def setup_logging(log_file="training1.log", resume=False):
     # If resuming, append to log; otherwise overwrite
     file_mode = 'a' if resume else 'w'
     
@@ -107,13 +107,13 @@ def train(args):
     logging.info(f"Training on {device}...")
     
     # 1. Load Data
-    full_csv = os.path.join("dataset", "train_data.csv")
+    full_csv = os.path.join("archive", "memotion_dataset_7k", "processed_train_data.csv")
     if not os.path.exists(full_csv):
         logging.info("Preprocessed csv not found! Running preprocessing...")
         import preprocess_data
         preprocess_data.preprocess_dataset(
-            os.path.join("dataset", "combined_data.csv"), 
-            "dataset", 
+            os.path.join("archive", "memotion_dataset_7k", "labels.csv"), 
+            os.path.join("archive", "memotion_dataset_7k", "images"), 
             full_csv
         )
         
@@ -246,7 +246,7 @@ def train(args):
 
     # Final Model Save
     logging.info("Saving final model...")
-    save_path = os.path.join(args.checkpoint_dir, "cdmt_trained_v1.pth")
+    save_path = os.path.join(args.checkpoint_dir, "cdmt_trained.pth")
     torch.save({
         'fusion': fusion.state_dict(),
         'classifier': classifier.state_dict()

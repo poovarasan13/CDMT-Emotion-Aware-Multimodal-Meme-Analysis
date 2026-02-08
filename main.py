@@ -55,10 +55,10 @@ def load_models():
     cd_metric = CognitiveDissonance(embedding_dim=512)
     
     # LOAD TRAINED WEIGHTS IF AVAILABLE
-    weights_path = "cdmt_trained_v1.pth"
+    weights_path = "cdmt_trained.pth"
     if not os.path.exists(weights_path):
         # Check checkpoints folder
-        weights_path = os.path.join("checkpoints", "cdmt_trained_v1.pth")
+        weights_path = os.path.join("checkpoints", "cdmt_trained.pth")
     
     if os.path.exists(weights_path):
         st.sidebar.success(f"Loading trained weights from {weights_path}")
@@ -67,14 +67,20 @@ def load_models():
             # Check for generic torch load issues (weights_only=True default in newer torch)
             checkpoint = torch.load(weights_path, map_location=torch.device('cpu')) 
             
-            fusion_mod.load_state_dict(checkpoint['fusion'])
-            classifier.load_state_dict(checkpoint['classifier'])
+            # Support both shard/dict formats
+            if 'fusion' in checkpoint:
+                fusion_mod.load_state_dict(checkpoint['fusion'])
+                classifier.load_state_dict(checkpoint['classifier'])
+            else:
+                fusion_mod.load_state_dict(checkpoint['fusion_state_dict'])
+                classifier.load_state_dict(checkpoint['classifier_state_dict'])
+                
             st.sidebar.text("Weights applied successfully.")
         except Exception as e:
             st.sidebar.error(f"Failed to load weights: {e}")
     else:
         st.sidebar.warning("No trained weights found. Using random init.")
-    
+            
     return img_enc, txt_enc, fusion_mod, classifier, cd_metric
 
 with st.spinner("Initializing models... (this may take a minute)"):
@@ -89,11 +95,11 @@ col1, col2 = st.columns([1, 1.5])
 
 with col1:
     st.subheader("1. Upload Meme")
-    uploaded_file = st.file_uploader("Choose a meme image...", type=["jpg", "png", "jpeg"])
+    uploaded_file = st.file_uploader("Choose a meme image...", type=["jpg", "png", "jpeg"], help="Select a sample from the dataset images folder for best results.")
     
     if uploaded_file is not None:
         image = Image.open(uploaded_file).convert('RGB')
-        st.image(image, caption='Uploaded Meme', use_container_width=True)
+        st.image(image, caption='Uploaded Meme', width=400) # Fixed width for better layout
         
         # --- Processing ---
         if st.button("Analyze Meme", type="primary"):
@@ -114,10 +120,11 @@ with col1:
                 
                 # 4. Prediction
                 pred_emotion, pred_probs = emotion_clf.predict(multimodal_vector)
-                
+
                 # 5. CD Metric
                 cds_score = cd_system.compute_cds(multimodal_vector, pred_emotion)
-                is_disagreement, disagreement_reason = cd_system.detect_disagreement(cds_score, threshold=0.8) # Arbitrary demo threshold
+                
+                is_disagreement, disagreement_reason = cd_system.detect_disagreement(cds_score, threshold=0.8)
                 
                 st.session_state['results'] = {
                     'text': extracted_text,
