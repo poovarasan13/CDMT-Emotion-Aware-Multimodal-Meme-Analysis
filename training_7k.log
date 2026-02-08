@@ -1,0 +1,17 @@
+2026-02-08 17:01:55,432 [INFO] Training on cpu...
+2026-02-08 17:02:01,941 [INFO] Starting Training Loop...
+2026-02-08 17:20:28,127 [INFO] Epoch 1 Summary:
+2026-02-08 17:20:28,143 [INFO]   Loss: 1.4429
+2026-02-08 17:20:28,144 [INFO]   Accuracy: 0.3587
+2026-02-08 17:20:28,144 [INFO]   F1 Score (Weighted): 0.2910
+2026-02-08 17:20:28,146 [INFO] ------------------------------
+2026-02-08 17:20:28,344 [INFO] Saved checkpoint to checkpoints\checkpoint_latest.pth and checkpoints\checkpoint_epoch_1.pth
+2026-02-08 17:20:28,345 [INFO] ==============================
+2026-02-08 17:20:28,346 [INFO] Training Completed!
+2026-02-08 17:20:28,347 [INFO] Final Model Metrics (Epoch 1):
+2026-02-08 17:20:28,347 [INFO]   Loss: 1.4429
+2026-02-08 17:20:28,348 [INFO]   Accuracy: 0.3587
+2026-02-08 17:20:28,348 [INFO]   F1 Score: 0.2910
+2026-02-08 17:20:28,348 [INFO] ==============================
+2026-02-08 17:20:28,349 [INFO] Saving final model...
+2026-02-08 17:20:28,371 [INFO] Model saved to checkpoints\cdmt_trained.pth

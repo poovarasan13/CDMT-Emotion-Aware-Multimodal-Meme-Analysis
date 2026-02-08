@@ -19,9 +19,9 @@ def generate_anchors():
     txt_enc = TextEncoder().to(device)
     fusion = MultimodalFusion().to(device)
     
-    weights_path = "cdmt_trained.pth" # or cdmt_trained_v1.pth
+    weights_path = os.path.join("checkpoints", "cdmt_trained.pth")
     if not os.path.exists(weights_path):
-        weights_path = os.path.join("checkpoints", "cdmt_trained.pth")
+        weights_path = "cdmt_trained.pth" 
         if not os.path.exists(weights_path):
             print("No trained weights found!")
             return
@@ -35,7 +35,7 @@ def generate_anchors():
     fusion.eval()
 
     # 2. Load Dataset
-    csv_path = os.path.join("dataset", "train_data.csv")
+    csv_path = os.path.join("archive", "memotion_dataset_7k", "processed_train_data.csv")
     df = pd.read_csv(csv_path)
     
     # We only need a subset of each class to get a decent anchor

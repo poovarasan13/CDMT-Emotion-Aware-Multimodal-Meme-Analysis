@@ -107,13 +107,13 @@ def train(args):
     logging.info(f"Training on {device}...")
     
     # 1. Load Data
-    full_csv = os.path.join("dataset", "train_data.csv")
+    full_csv = os.path.join("archive", "memotion_dataset_7k", "processed_train_data.csv")
     if not os.path.exists(full_csv):
         logging.info("Preprocessed csv not found! Running preprocessing...")
         import preprocess_data
         preprocess_data.preprocess_dataset(
-            os.path.join("dataset", "combined_data.csv"), 
-            "dataset", 
+            os.path.join("archive", "memotion_dataset_7k", "labels.csv"), 
+            os.path.join("archive", "memotion_dataset_7k", "images"), 
             full_csv
         )
         

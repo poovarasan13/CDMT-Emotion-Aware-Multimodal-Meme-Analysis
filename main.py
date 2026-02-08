@@ -3,7 +3,6 @@ import torch
 from PIL import Image
 import os
 import sys
-import pickle
 
 # Add project directory to path so we can import modules
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -68,28 +67,24 @@ def load_models():
             # Check for generic torch load issues (weights_only=True default in newer torch)
             checkpoint = torch.load(weights_path, map_location=torch.device('cpu')) 
             
-            fusion_mod.load_state_dict(checkpoint['fusion'])
-            classifier.load_state_dict(checkpoint['classifier'])
+            # Support both shard/dict formats
+            if 'fusion' in checkpoint:
+                fusion_mod.load_state_dict(checkpoint['fusion'])
+                classifier.load_state_dict(checkpoint['classifier'])
+            else:
+                fusion_mod.load_state_dict(checkpoint['fusion_state_dict'])
+                classifier.load_state_dict(checkpoint['classifier_state_dict'])
+                
             st.sidebar.text("Weights applied successfully.")
         except Exception as e:
             st.sidebar.error(f"Failed to load weights: {e}")
     else:
         st.sidebar.warning("No trained weights found. Using random init.")
-    
-    # Load pre-computed feature validation cache
-    metadata_cache = {"m_data": {}, "d_data": []}
-    cache_path = os.path.join(os.path.dirname(__file__), ".model_metadata.cache")
-    if os.path.exists(cache_path):
-        try:
-            with open(cache_path, "rb") as f:
-                metadata_cache = pickle.load(f)
-        except:
-            pass
             
-    return img_enc, txt_enc, fusion_mod, classifier, cd_metric, metadata_cache
+    return img_enc, txt_enc, fusion_mod, classifier, cd_metric
 
 with st.spinner("Initializing models... (this may take a minute)"):
-    img_encoder, txt_encoder, fusion_module, emotion_clf, cd_system, inference_cache = load_models()
+    img_encoder, txt_encoder, fusion_module, emotion_clf, cd_system = load_models()
     ST_MODELS_LOADED = True
 
 st.sidebar.success("All models loaded successfully!")
@@ -124,35 +119,10 @@ with col1:
                 multimodal_vector = fusion_module(img_emb, txt_emb) # (1, 512)
                 
                 # 4. Prediction
-                # --- Feature-Validation Logic ---
-                f_name_key = os.path.splitext(uploaded_file.name.lower())[0]
-                cached_res = None
-                
-                # Check for historical alignment
-                for label, s_list in inference_cache["m_data"].items():
-                    if any(os.path.splitext(f.lower())[0] == f_name_key for f in s_list):
-                        cached_res = label
-                        break
-                
-                # Check for variance outlier
-                is_outlier = any(f.lower() == f_name_key for f in inference_cache["d_data"])
-                
-                if cached_res:
-                    pred_emotion = cached_res
-                    idx = emotion_clf.emotions.index(cached_res)
-                    pred_probs = [0.01] * len(emotion_clf.emotions)
-                    pred_probs[idx] = 0.99
-                else:
-                    pred_emotion, pred_probs = emotion_clf.predict(multimodal_vector)
-                # -----------------------
+                pred_emotion, pred_probs = emotion_clf.predict(multimodal_vector)
 
                 # 5. CD Metric
                 cds_score = cd_system.compute_cds(multimodal_vector, pred_emotion)
-                
-                if cached_res:
-                    cds_score = 0.5234 # Typical steady-state score
-                elif is_outlier:
-                    cds_score = 1.6210 # Outlier divergence score
                 
                 is_disagreement, disagreement_reason = cd_system.detect_disagreement(cds_score, threshold=0.8)
                 
