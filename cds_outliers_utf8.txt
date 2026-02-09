@@ -1,0 +1,32 @@
+﻿Using device: cpu
+Loading Image Encoder: openai/clip-vit-base-patch32...
+Loading Text Encoder: sentence-transformers/all-MiniLM-L6-v2...
+Initializing Fusion Module (Image: 768, Text: 384 -> Hidden: 512)
+Loaded data-driven emotion anchors.
+
+CDS Statistics (200 samples):
+Mean: 1.3268
+90th percentile: 1.3605
+Max: 1.3896
+
+Top 5 High Dissonance Samples:
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_2852.jpg
+  Label: offensive
+  CDS: 1.3896
+  Text: Bad Luck Brian...
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_1884.png
+  Label: offensive
+  CDS: 1.3886
+  Text: Hey Steve Harvey real men don't make fun of people with disabilities. tweet him at @IAmSteve Harvey...
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_6770.jpg
+  Label: humor
+  CDS: 1.3856
+  Text: WHY SHOULD BOYS HAVE ALL THE FUN WHAT ABOUT WOMEN EMPOWERMENT? memegenerator.net...
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_3405.jpg
+  Label: offensive
+  CDS: 1.3843
+  Text: when you haven't stolen anything in a week fursadelosdioses@facebook.com...
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_3943.jpg
+  Label: humor
+  CDS: 1.3813
+  Text: 47 SUCCESS KID MEMES THAT SHOW EVEN THE LITTLE VICTORIES ARE WORTH IT HAD STUPID OPINIONS AS A TEENA...

@@ -139,7 +139,7 @@ with col1:
                 # 5. CD Metric
                 cds_score = cd_system.compute_cds(multimodal_vector, pred_emotion)
                 
-                is_disagreement, disagreement_reason = cd_system.detect_disagreement(cds_score, threshold=0.8)
+                is_disagreement, disagreement_reason = cd_system.detect_disagreement(cds_score, threshold=1.38)
                 
                 st.session_state['results'] = {
                     'text': extracted_text,
@@ -174,9 +174,9 @@ with col2:
         metric_col1.metric("Cognitive Dissonance Score (CDS)", f"{res['cds']:.4f}")
         
         if res['is_disagreement']:
-            metric_col2.error("DISAGREEMENT DETECTED")
+            metric_col2.error("HIGH INTERNAL DISSONANCE")
         else:
-            metric_col2.success("Consensus Likely")
+            metric_col2.success("Low Model Dissonance")
             
         st.markdown(f"**Interpretation:** *{res['reason']}*")
         

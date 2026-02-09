@@ -1,0 +1,6 @@
+﻿Using device: cpu
+Loading Image Encoder: openai/clip-vit-base-patch32...
+Loading Text Encoder: sentence-transformers/all-MiniLM-L6-v2...
+Initializing Fusion Module (Image: 768, Text: 384 -> Hidden: 512)
+Loaded data-driven emotion anchors.
+Initializing Emotion Classifier for ['humor', 'sarcasm', 'offensive', 'motivational', 'neutral']

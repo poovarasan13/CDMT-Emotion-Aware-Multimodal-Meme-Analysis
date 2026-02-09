@@ -47,7 +47,7 @@ class CognitiveDissonance:
         dist = torch.norm(ai_emb - human_emb, p=2).item()
         return dist
         
-    def detect_disagreement(self, cds, threshold=1.0):
+    def detect_disagreement(self, cds, threshold=1.38):
         """
         If CDS > Threshold, it implies the AI's internal representation 
         is far from the 'canonical' human representation of that emotion,

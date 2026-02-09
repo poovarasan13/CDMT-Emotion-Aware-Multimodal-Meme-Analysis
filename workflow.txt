@@ -140,3 +140,26 @@ TROUBLESHOOTING
     The app will automatically detect and load the trained weights. You will see a "Loading trained weights..." 
     success message in the sidebar. Upload any meme to test the model's new predictions.
 
+
+
+
+disagreement
+
+
+image_3432.png
+image_6661.jpg
+image_3943.jpg
+
+
+
+
+
+
+
+
+
+
+
+Range	            Level	                                Meaning
+0.00 – 1.38	    Low Dissonance	             The model is confident. The meme is a clear, standard example of its emotion.
+> 1.38	         High Dissonance	        The model is uncertain. The meme is complex, nuanced, or atypical (often seen in sarcasm).

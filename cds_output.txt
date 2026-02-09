@@ -1,0 +1,7 @@
+
+CDS Statistics:
+Mean: 1.3217
+Median: 1.3248
+Max: 1.3856
+Min: 1.2611
+90th percentile: 1.3605

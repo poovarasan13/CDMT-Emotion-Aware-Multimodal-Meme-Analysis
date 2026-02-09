@@ -1,0 +1,161 @@
+﻿Using device: cpu
+Loading Image Encoder: openai/clip-vit-base-patch32...
+Loading Text Encoder: sentence-transformers/all-MiniLM-L6-v2...
+Initializing Fusion Module (Image: 768, Text: 384 -> Hidden: 512)
+Loaded data-driven emotion anchors.
+Initializing Emotion Classifier for ['humor', 'sarcasm', 'offensive', 'motivational', 'neutral']
+
+Discovered High Dissonance Samples (> 1.36):
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_159.jpg
+  CDS: 1.3932
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_219.jpg
+  CDS: 1.3910
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_472.jpg
+  CDS: 1.3894
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_216.jpg
+  CDS: 1.3889
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_233.png
+  CDS: 1.3878
+  Emotion: offensive
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_446.jpg
+  CDS: 1.3799
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_460.jpg
+  CDS: 1.3785
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_192.jpg
+  CDS: 1.3779
+  Emotion: offensive
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_204.png
+  CDS: 1.3775
+  Emotion: offensive
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_449.jpg
+  CDS: 1.3764
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_274.jpg
+  CDS: 1.3762
+  Emotion: neutral
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_294.jpg
+  CDS: 1.3760
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_475.jpg
+  CDS: 1.3754
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_380.jpg
+  CDS: 1.3735
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_18.jpg
+  CDS: 1.3732
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_273.jpg
+  CDS: 1.3732
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_267.jpg
+  CDS: 1.3729
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_445.jpg
+  CDS: 1.3728
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_226.jpg
+  CDS: 1.3721
+  Emotion: offensive
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_341.jpg
+  CDS: 1.3711
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_272.jpg
+  CDS: 1.3693
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_95.jpg
+  CDS: 1.3692
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_389.jpg
+  CDS: 1.3687
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_52.jpg
+  CDS: 1.3681
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_318.jpg
+  CDS: 1.3679
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_362.jpg
+  CDS: 1.3679
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_195.png
+  CDS: 1.3679
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_333.jpg
+  CDS: 1.3677
+  Emotion: neutral
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_413.jpg
+  CDS: 1.3675
+  Emotion: neutral
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_292.jpg
+  CDS: 1.3675
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_152.png
+  CDS: 1.3671
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_376.jpg
+  CDS: 1.3671
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_407.jpg
+  CDS: 1.3664
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_72.jpg
+  CDS: 1.3663
+  Emotion: neutral
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_132.png
+  CDS: 1.3655
+  Emotion: neutral
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_124.png
+  CDS: 1.3650
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_364.jpg
+  CDS: 1.3648
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_111.jpg
+  CDS: 1.3640
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_184.jpg
+  CDS: 1.3638
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_374.jpg
+  CDS: 1.3638
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_193.png
+  CDS: 1.3637
+  Emotion: offensive
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_235.png
+  CDS: 1.3636
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_433.jpg
+  CDS: 1.3635
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_424.jpg
+  CDS: 1.3630
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_106.jpg
+  CDS: 1.3628
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_369.jpg
+  CDS: 1.3619
+  Emotion: neutral
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_349.png
+  CDS: 1.3606
+  Emotion: humor
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_188.jpg
+  CDS: 1.3606
+  Emotion: neutral
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_357.png
+  CDS: 1.3605
+  Emotion: offensive
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_42.jpg
+  CDS: 1.3602
+  Emotion: motivational
+- Path: D:\Final Year Project Phase II\Code\project\archive\memotion_dataset_7k\images\image_59.jpg
+  CDS: 1.3602
+  Emotion: motivational
