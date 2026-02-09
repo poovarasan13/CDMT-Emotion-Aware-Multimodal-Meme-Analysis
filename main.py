@@ -1,8 +1,23 @@
 import streamlit as st
-import torch
-from PIL import Image
 import os
 import sys
+
+# DEBUG: Fix for potential Illegal Instruction (AVX) on some CPUs
+os.environ["MKL_DEBUG_CPU_TYPE"] = "5"
+os.environ["MKL_SERVICE_FORCE_INTEL"] = "1"
+
+# Force torch to use CPU if needed, though script handles device checking
+# os.environ["CUDA_VISIBLE_DEVICES"] = "" 
+
+print("DEBUG: Starting main.py", file=sys.stderr)
+
+import torch
+import numpy as np
+from PIL import Image
+
+print(f"DEBUG: Torch Version: {torch.__version__}", file=sys.stderr)
+print(f"DEBUG: Numpy Version: {np.__version__}", file=sys.stderr)
+
 
 # Add project directory to path so we can import modules
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))

@@ -1,17 +1,184 @@
-2026-02-08 17:14:48,379 [INFO] Training on cpu...
-2026-02-08 17:14:53,569 [INFO] Starting Training Loop...
-2026-02-08 17:32:11,064 [INFO] Epoch 1 Summary:
-2026-02-08 17:32:11,070 [INFO]   Loss: 1.4442
-2026-02-08 17:32:11,071 [INFO]   Accuracy: 0.3523
-2026-02-08 17:32:11,071 [INFO]   F1 Score (Weighted): 0.2891
-2026-02-08 17:32:11,072 [INFO] ------------------------------
-2026-02-08 17:32:11,164 [INFO] Saved checkpoint to checkpoints\checkpoint_latest.pth and checkpoints\checkpoint_epoch_1.pth
-2026-02-08 17:32:11,164 [INFO] ==============================
-2026-02-08 17:32:11,164 [INFO] Training Completed!
-2026-02-08 17:32:11,165 [INFO] Final Model Metrics (Epoch 1):
-2026-02-08 17:32:11,165 [INFO]   Loss: 1.4442
-2026-02-08 17:32:11,166 [INFO]   Accuracy: 0.3523
-2026-02-08 17:32:11,166 [INFO]   F1 Score: 0.2891
-2026-02-08 17:32:11,166 [INFO] ==============================
-2026-02-08 17:32:11,166 [INFO] Saving final model...
-2026-02-08 17:32:11,179 [INFO] Model saved to checkpoints\cdmt_trained.pth
+2026-02-08 21:00:04,793 [INFO] Training on cpu...
+2026-02-08 21:00:05,334 [INFO] HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-02-08 21:00:05,566 [INFO] HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-08 21:00:05,656 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/preprocessor_config.json "HTTP/1.1 200 OK"
+2026-02-08 21:00:05,894 [INFO] HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-08 21:00:05,913 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+2026-02-08 21:00:06,151 [INFO] HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-02-08 21:00:06,394 [INFO] HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-02-08 21:00:06,634 [INFO] HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/pytorch_model.bin "HTTP/1.1 302 Found"
+2026-02-08 21:00:06,865 [INFO] HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-02-08 21:00:07,129 [INFO] HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32 "HTTP/1.1 200 OK"
+2026-02-08 21:00:07,409 [INFO] HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/commits/main "HTTP/1.1 200 OK"
+2026-02-08 21:00:07,668 [INFO] HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/discussions?p=0 "HTTP/1.1 200 OK"
+2026-02-08 21:00:08,154 [INFO] HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/commits/refs%2Fpr%2F66 "HTTP/1.1 200 OK"
+2026-02-08 21:00:08,410 [INFO] HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/refs%2Fpr%2F66/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-02-08 21:00:08,679 [INFO] HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/refs%2Fpr%2F66/model.safetensors "HTTP/1.1 302 Found"
+2026-02-08 21:00:08,808 [INFO] HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-08 21:00:08,825 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-02-08 21:00:09,072 [INFO] HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-08 21:00:09,089 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-02-08 21:00:09,341 [INFO] HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-02-08 21:00:09,621 [INFO] HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-08 21:00:09,999 [INFO] HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-08 21:00:10,034 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-02-08 21:00:10,408 [INFO] Starting Training Loop...
+2026-02-08 21:14:36,486 [INFO] Epoch 1 Summary:
+2026-02-08 21:14:36,486 [INFO]   Loss: 1.4441
+2026-02-08 21:14:36,486 [INFO]   Accuracy: 0.3435
+2026-02-08 21:14:36,486 [INFO]   F1 Score (Weighted): 0.2737
+2026-02-08 21:14:36,487 [INFO] ------------------------------
+2026-02-08 21:14:36,840 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_1.pth
+2026-02-08 21:28:56,952 [INFO] Epoch 2 Summary:
+2026-02-08 21:28:56,952 [INFO]   Loss: 1.4358
+2026-02-08 21:28:56,953 [INFO]   Accuracy: 0.3465
+2026-02-08 21:28:56,953 [INFO]   F1 Score (Weighted): 0.2816
+2026-02-08 21:28:56,953 [INFO] ------------------------------
+2026-02-08 21:28:57,287 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_2.pth
+2026-02-08 21:43:29,417 [INFO] Epoch 3 Summary:
+2026-02-08 21:43:29,418 [INFO]   Loss: 1.4298
+2026-02-08 21:43:29,418 [INFO]   Accuracy: 0.3555
+2026-02-08 21:43:29,418 [INFO]   F1 Score (Weighted): 0.2828
+2026-02-08 21:43:29,418 [INFO] ------------------------------
+2026-02-08 21:43:29,771 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_3.pth
+2026-02-08 21:57:53,629 [INFO] Epoch 4 Summary:
+2026-02-08 21:57:53,630 [INFO]   Loss: 1.4223
+2026-02-08 21:57:53,630 [INFO]   Accuracy: 0.3790
+2026-02-08 21:57:53,630 [INFO]   F1 Score (Weighted): 0.3070
+2026-02-08 21:57:53,630 [INFO] ------------------------------
+2026-02-08 21:57:54,029 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_4.pth
+2026-02-08 22:12:18,524 [INFO] Epoch 5 Summary:
+2026-02-08 22:12:18,525 [INFO]   Loss: 1.4143
+2026-02-08 22:12:18,525 [INFO]   Accuracy: 0.3857
+2026-02-08 22:12:18,525 [INFO]   F1 Score (Weighted): 0.3144
+2026-02-08 22:12:18,525 [INFO] ------------------------------
+2026-02-08 22:12:18,905 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_5.pth
+2026-02-08 22:26:42,159 [INFO] Epoch 6 Summary:
+2026-02-08 22:26:42,159 [INFO]   Loss: 1.4088
+2026-02-08 22:26:42,159 [INFO]   Accuracy: 0.3906
+2026-02-08 22:26:42,159 [INFO]   F1 Score (Weighted): 0.3188
+2026-02-08 22:26:42,160 [INFO] ------------------------------
+2026-02-08 22:26:42,434 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_6.pth
+2026-02-08 22:41:06,203 [INFO] Epoch 7 Summary:
+2026-02-08 22:41:06,204 [INFO]   Loss: 1.4024
+2026-02-08 22:41:06,204 [INFO]   Accuracy: 0.3943
+2026-02-08 22:41:06,204 [INFO]   F1 Score (Weighted): 0.3222
+2026-02-08 22:41:06,204 [INFO] ------------------------------
+2026-02-08 22:41:06,561 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_7.pth
+2026-02-08 22:55:29,681 [INFO] Epoch 8 Summary:
+2026-02-08 22:55:29,681 [INFO]   Loss: 1.3962
+2026-02-08 22:55:29,681 [INFO]   Accuracy: 0.4003
+2026-02-08 22:55:29,682 [INFO]   F1 Score (Weighted): 0.3312
+2026-02-08 22:55:29,682 [INFO] ------------------------------
+2026-02-08 22:55:30,025 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_8.pth
+2026-02-08 23:09:54,213 [INFO] Epoch 9 Summary:
+2026-02-08 23:09:54,213 [INFO]   Loss: 1.3866
+2026-02-08 23:09:54,213 [INFO]   Accuracy: 0.4053
+2026-02-08 23:09:54,213 [INFO]   F1 Score (Weighted): 0.3376
+2026-02-08 23:09:54,214 [INFO] ------------------------------
+2026-02-08 23:09:54,591 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_9.pth
+2026-02-08 23:24:17,928 [INFO] Epoch 10 Summary:
+2026-02-08 23:24:17,928 [INFO]   Loss: 1.3823
+2026-02-08 23:24:17,928 [INFO]   Accuracy: 0.3993
+2026-02-08 23:24:17,929 [INFO]   F1 Score (Weighted): 0.3349
+2026-02-08 23:24:17,929 [INFO] ------------------------------
+2026-02-08 23:24:18,329 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_10.pth
+2026-02-08 23:38:43,340 [INFO] Epoch 11 Summary:
+2026-02-08 23:38:43,340 [INFO]   Loss: 1.3729
+2026-02-08 23:38:43,340 [INFO]   Accuracy: 0.4116
+2026-02-08 23:38:43,341 [INFO]   F1 Score (Weighted): 0.3515
+2026-02-08 23:38:43,341 [INFO] ------------------------------
+2026-02-08 23:38:43,740 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_11.pth
+2026-02-08 23:53:06,986 [INFO] Epoch 12 Summary:
+2026-02-08 23:53:06,987 [INFO]   Loss: 1.3662
+2026-02-08 23:53:06,987 [INFO]   Accuracy: 0.4092
+2026-02-08 23:53:06,987 [INFO]   F1 Score (Weighted): 0.3498
+2026-02-08 23:53:06,988 [INFO] ------------------------------
+2026-02-08 23:53:07,365 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_12.pth
+2026-02-09 00:07:32,184 [INFO] Epoch 13 Summary:
+2026-02-09 00:07:32,184 [INFO]   Loss: 1.3580
+2026-02-09 00:07:32,184 [INFO]   Accuracy: 0.4126
+2026-02-09 00:07:32,185 [INFO]   F1 Score (Weighted): 0.3595
+2026-02-09 00:07:32,185 [INFO] ------------------------------
+2026-02-09 00:07:32,541 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_13.pth
+2026-02-09 00:21:57,672 [INFO] Epoch 14 Summary:
+2026-02-09 00:21:57,673 [INFO]   Loss: 1.3496
+2026-02-09 00:21:57,673 [INFO]   Accuracy: 0.4189
+2026-02-09 00:21:57,673 [INFO]   F1 Score (Weighted): 0.3675
+2026-02-09 00:21:57,673 [INFO] ------------------------------
+2026-02-09 00:21:58,065 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_14.pth
+2026-02-09 00:36:22,548 [INFO] Epoch 15 Summary:
+2026-02-09 00:36:22,548 [INFO]   Loss: 1.3391
+2026-02-09 00:36:22,548 [INFO]   Accuracy: 0.4202
+2026-02-09 00:36:22,548 [INFO]   F1 Score (Weighted): 0.3724
+2026-02-09 00:36:22,549 [INFO] ------------------------------
+2026-02-09 00:36:22,873 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_15.pth
+2026-02-09 00:50:47,399 [INFO] Epoch 16 Summary:
+2026-02-09 00:50:47,399 [INFO]   Loss: 1.3322
+2026-02-09 00:50:47,400 [INFO]   Accuracy: 0.4228
+2026-02-09 00:50:47,400 [INFO]   F1 Score (Weighted): 0.3764
+2026-02-09 00:50:47,400 [INFO] ------------------------------
+2026-02-09 00:50:47,730 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_16.pth
+2026-02-09 01:05:11,698 [INFO] Epoch 17 Summary:
+2026-02-09 01:05:11,699 [INFO]   Loss: 1.3228
+2026-02-09 01:05:11,699 [INFO]   Accuracy: 0.4325
+2026-02-09 01:05:11,699 [INFO]   F1 Score (Weighted): 0.3856
+2026-02-09 01:05:11,699 [INFO] ------------------------------
+2026-02-09 01:05:12,047 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_17.pth
+2026-02-09 01:19:35,775 [INFO] Epoch 18 Summary:
+2026-02-09 01:19:35,776 [INFO]   Loss: 1.3119
+2026-02-09 01:19:35,776 [INFO]   Accuracy: 0.4275
+2026-02-09 01:19:35,776 [INFO]   F1 Score (Weighted): 0.3845
+2026-02-09 01:19:35,776 [INFO] ------------------------------
+2026-02-09 01:19:36,098 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_18.pth
+2026-02-09 01:34:01,007 [INFO] Epoch 19 Summary:
+2026-02-09 01:34:01,008 [INFO]   Loss: 1.2980
+2026-02-09 01:34:01,008 [INFO]   Accuracy: 0.4428
+2026-02-09 01:34:01,008 [INFO]   F1 Score (Weighted): 0.4023
+2026-02-09 01:34:01,008 [INFO] ------------------------------
+2026-02-09 01:34:01,481 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_19.pth
+2026-02-09 01:48:24,663 [INFO] Epoch 20 Summary:
+2026-02-09 01:48:24,663 [INFO]   Loss: 1.2854
+2026-02-09 01:48:24,663 [INFO]   Accuracy: 0.4416
+2026-02-09 01:48:24,663 [INFO]   F1 Score (Weighted): 0.4031
+2026-02-09 01:48:24,664 [INFO] ------------------------------
+2026-02-09 01:48:24,977 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_20.pth
+2026-02-09 02:02:48,585 [INFO] Epoch 21 Summary:
+2026-02-09 02:02:48,585 [INFO]   Loss: 1.2670
+2026-02-09 02:02:48,585 [INFO]   Accuracy: 0.4505
+2026-02-09 02:02:48,585 [INFO]   F1 Score (Weighted): 0.4162
+2026-02-09 02:02:48,585 [INFO] ------------------------------
+2026-02-09 02:02:48,934 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_21.pth
+2026-02-09 02:17:12,408 [INFO] Epoch 22 Summary:
+2026-02-09 02:17:12,408 [INFO]   Loss: 1.2454
+2026-02-09 02:17:12,408 [INFO]   Accuracy: 0.4582
+2026-02-09 02:17:12,408 [INFO]   F1 Score (Weighted): 0.4254
+2026-02-09 02:17:12,409 [INFO] ------------------------------
+2026-02-09 02:17:12,790 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_22.pth
+2026-02-09 02:31:38,090 [INFO] Epoch 23 Summary:
+2026-02-09 02:31:38,091 [INFO]   Loss: 1.2228
+2026-02-09 02:31:38,091 [INFO]   Accuracy: 0.4754
+2026-02-09 02:31:38,091 [INFO]   F1 Score (Weighted): 0.4461
+2026-02-09 02:31:38,091 [INFO] ------------------------------
+2026-02-09 02:31:38,439 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_23.pth
+2026-02-09 02:46:02,303 [INFO] Epoch 24 Summary:
+2026-02-09 02:46:02,303 [INFO]   Loss: 1.1995
+2026-02-09 02:46:02,304 [INFO]   Accuracy: 0.4843
+2026-02-09 02:46:02,304 [INFO]   F1 Score (Weighted): 0.4592
+2026-02-09 02:46:02,304 [INFO] ------------------------------
+2026-02-09 02:46:02,631 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_24.pth
+2026-02-09 03:00:25,635 [INFO] Epoch 25 Summary:
+2026-02-09 03:00:25,635 [INFO]   Loss: 1.1698
+2026-02-09 03:00:25,635 [INFO]   Accuracy: 0.5029
+2026-02-09 03:00:25,636 [INFO]   F1 Score (Weighted): 0.4808
+2026-02-09 03:00:25,636 [INFO] ------------------------------
+2026-02-09 03:00:26,001 [INFO] Saved checkpoint to checkpoints/checkpoint_latest.pth and checkpoints/checkpoint_epoch_25.pth
+2026-02-09 03:00:26,002 [INFO] ==============================
+2026-02-09 03:00:26,002 [INFO] Training Completed!
+2026-02-09 03:00:26,002 [INFO] Final Model Metrics (Epoch 25):
+2026-02-09 03:00:26,002 [INFO]   Loss: 1.1698
+2026-02-09 03:00:26,003 [INFO]   Accuracy: 0.5029
+2026-02-09 03:00:26,003 [INFO]   F1 Score: 0.4808
+2026-02-09 03:00:26,003 [INFO] ==============================
+2026-02-09 03:00:26,003 [INFO] Saving final model...
+2026-02-09 03:00:26,028 [INFO] Model saved to checkpoints/cdmt_trained.pth
