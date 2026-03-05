@@ -113,6 +113,14 @@ with col1:
     uploaded_file = st.file_uploader("Choose a meme image...", type=["jpg", "png", "jpeg"], help="Select a sample from the dataset images folder for best results.")
     
     if uploaded_file is not None:
+        # --- Detect File Change ---
+        file_key = f"{uploaded_file.name}_{uploaded_file.size}"
+        if 'last_uploaded_file' not in st.session_state or st.session_state['last_uploaded_file'] != file_key:
+            st.session_state['last_uploaded_file'] = file_key
+            # Clear previous results if they exist for a new file
+            if 'results' in st.session_state:
+                del st.session_state['results']
+
         image = Image.open(uploaded_file).convert('RGB')
         st.image(image, caption='Uploaded Meme', width=400) # Fixed width for better layout
         

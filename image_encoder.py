@@ -1,13 +1,19 @@
 import torch
 import torch.nn as nn
-from transformers import CLIPVisionModel, CLIPImageProcessor
+from transformers import CLIPVisionModel, CLIPImageProcessor, CLIPConfig
 
 class ImageEncoder(nn.Module):
     def __init__(self, model_name="openai/clip-vit-base-patch32"):
         super().__init__()
         print(f"Loading Image Encoder: {model_name}...")
         self.processor = CLIPImageProcessor.from_pretrained(model_name)
-        self.model = CLIPVisionModel.from_pretrained(model_name)
+        try:
+            self.model = CLIPVisionModel.from_pretrained(model_name)
+        except AttributeError:
+            # Fix for AttributeError: 'CLIPConfig' object has no attribute 'hidden_size'
+            print("Loading model using explicit vision config...")
+            config = CLIPConfig.from_pretrained(model_name)
+            self.model = CLIPVisionModel.from_pretrained(model_name, config=config.vision_config)
         
         # Freeze weights
         for param in self.model.parameters():
